@@ -1,14 +1,13 @@
-# Nerfies
+# Understanding RLHF
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is the repository that contains source code for the [Understanding RLHF website](https://understanding-rlhf.github.io).
 
 If you find Nerfies useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{tajwar2024preference,
+  author    = {Tajwar and Singh, Sharma and Rafailov, Schneider and Xie, Ermon and Finn, Kumar},
+  title     = {Preference Fine-Tuning of LLMs Should Leverage Suboptimal, On-Policy Data},
+  year      = {2024},
 }
 ```
 
