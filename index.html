@@ -3,24 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="Study the role of on-policy sampling and negative gradients in existing preference fine-tuning algorithms.">
+  <meta name="keywords" content="RLHF, Preference Fine-Tuning, Synthetic Data, PPO, DPO, RL, LLMs">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+  <title>Understanding RLHF</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -42,85 +28,55 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
 
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">Preference Fine-Tuning of LLMs should Levarage Suboptimal, On-Policy Data</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a href="https://tajwarfahim.github.io/">Fahim Tajwar</a><sup>*1</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a href="https://asap7772.github.io/">Anikait Singh</a><sup>*2</sup>,</span>
+              <span class="author-block">
+              <a href="https://architsharma97.github.io/">Archit Sharma</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+              <a href="https://rmrafailov.github.io/">Rafael Rafailov</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+              <a href="https://www.cs.cmu.edu/~schneide/">Jeff Schnieder</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+              <a href="https://tengyangxie.github.io/">Tengyang Xie</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+              <a href="https://cs.stanford.edu/~ermon/">Stefano Ermon</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://ai.stanford.edu/~cbfinn/">Chelsea Finn</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://aviralkumar2907.github.io/">Aviral Kumar</a><sup>4</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>*</sup>Equal Contribution (coin-flip)</span>
+            <span class="author-block"><sup>1</sup>Carnegie Mellon University</span>
+            <span class="author-block"><sup>2</sup>Stanford University</span>
+            <br/>
+            <span class="author-block"><sup>3</sup>Microsoft Research</span>
+            <span class="author-block"><sup>4</sup>Google DeepMind</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="./static/pdf/understanding_rlhf.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -129,7 +85,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="https://arxiv.org/abs/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -138,7 +94,7 @@
                 </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -146,10 +102,10 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/Asap7772/understanding-rlhf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -158,15 +114,16 @@
                   </a>
               </span>
               <!-- Dataset Link. -->
-              <span class="link-block">
+              <!-- TODO: construct page for Datasets -->
+              <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
+                  class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
                   </a>
-            </div>
+            </div> -->
 
           </div>
         </div>
@@ -178,73 +135,14 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
+      <img src="./static/images/final_picture_teaser.jpg"
+           alt="Teaser image."
+           class="teaser-image"/>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        We study what approaches are important for fine-tuning with preference data and why. Our main finding is that approaches 
+        that use on-policy sampling or attempt to minimize the likelihood on certain responses (negative gradient) outperform 
+        offline and maximum likelihood objectives.
       </h2>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -258,198 +156,243 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Learning from preference labels plays a crucial role in fine-tuning large language models. There are several
+            distinct approaches for preference fine-tuning, including supervised learning, on-policy reinforcement learning
+            (RL), and contrastive learning. Different methods come with different implementation tradeoffs and perfor-
+            mance differences, and existing empirical findings present different conclusions, for instance, some results
+            show that online RL is quite important to attain good fine-tuning results, while others find (offline) contrastive
+            or even purely supervised methods sufficient. This raises a natural question: what kind of approaches are
+            important for fine-tuning with preference data and why? In this paper, we answer this question by performing
+            a rigorous analysis of a number of fine-tuning techniques on didactic and full-scale LLM problems. Our main
+            finding is that, in general, approaches that use on-policy sampling or attempt to minimize the likelihood on
+            certain responses (i.e., employ a negative gradient) outperform offline and maximum likelihood objectives. We
+            conceptualize our insights and unify methods that use on-policy sampling or negative gradient under the notion
+            of mode-seeking objectives, extended to categorical distributions. Mode-seeking objectives are able to alter
+            probability mass on specific bins of a categorical distribution at a fast rate compared to maximum likelihood,
+            allowing them to relocate masses across bins more effectively. Our analysis prescribes actionable insights for
+            preference fine-tuning of LLMs and informs how data should be collected for maximal improvement.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
-
-
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
 
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <h2 class="title is-3">Domains Considered</h2>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            We considered three domains for our experiments: Didactic Bandit, Synthetic LLM, and Full-Scale LLM. We use these domains to study the impact of on-policy sampling
+            and negative gradients on different fine-tuning algorithms.
           </p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
+        
+        <h3 class="title is-4">Didactic Bandit</h3>
+        <div class="content has-text-justified">
+          <p>
+            The didactic bandit domain is a simple bandit problem where the reward function is known and the response space is small. We use this domain to validate
+            our theoretical findings and to understand the impact of on-policy sampling and negative gradients on different fine-tuning algorithms.
+          </p>
         </div>
-        <br/>
+
+        <h3 class="title is-4">Synthetic LLM</h3>
+        <div class="content has-text-justified">
+          <p>
+            The synthetic LLM domain is a domain where we can control the reward function and the response space. We use this domain to study the impact of coverage 
+            conditions and geometric relationships on different fine-tuning algorithms. 
+          </p>
+          <p>
+            In particular, our reward function of interest is the length of the response.
+            We consider three different types of reward functions: min length, mode length, and skew length. In the min length reward function, the optimal response is
+            the shortest response. In the mode length reward function, the optimal response is a response that is closest to the mode of the response space. In the skew
+            length reward function, completions in the dataset are truncated to shorter lengths, leading to a skewed distribution of response lengths.
+          </p>
+        </div>
+
+        <h3 class="title is-4">Full-Scale LLM</h3>
+        <div class="content has-text-justified">
+          <p>
+            The full-scale LLM domain is a domain where we can study the impact of fine-tuning algorithms on realistic domains. We use the AlpacaFarm and UltraFeedback 
+            domains, which are domains commonly used by practitioners.
+          </p>
+        </div>
+
+        <h3 class="title is-4">Coverage Conditions and Geometric Relationships</h3>
+
+        <div class="content has-text-justified">
+          <p>
+            The performance of preference-finetuning algorithms can be affected by several factors: (1) the coverage of the preference dataset, 
+            (2) the reference policy initialization, and (3) the underlying ground truth reward distribution. To study this impact, we consider two
+            orthogonal axes: [C1] the geometric alignment between the ground-truth reward function and the reference policy initialization and [C2] the 
+            coverage of the preference data used to train the surrogate reward model relative to the reference policy.
+          </p>
+          <p>
+            Understanding the behavior of various approaches as a function of these factors will allow us to better understand the performance of 
+            various approaches on downstream fine-tuning in terms of problem geometry [C1] and statistical learning considerations [C2].
+          </p>
+        </div>
+        
+        <center>
+        <img src="./static/images/coverage.png"
+          width="90%"
+          alt="On-Policy Sampling."
+          class="on-policy-image"/>
+        </center>
+        
+        <div class="content has-text-centered">
+          <p>
+            We consider three different types of reward functions: min length, mode length, and skew length. These reward functions are designed to test the
+            performance of different fine-tuning algorithms under different coverage conditions.
+          </p>
+        </div>
+
+        <hr>
+
+        <h2 class="title is-3">Empirical Analysis</h2>
+
+        <!-- Interpolating. -->
+        <h3 class="title is-4">Characterizing Fine-Tuning Methods</h3>
+        In this work, we study the role of on-policy sampling and negative gradients in existing preference fine-tuning algorithms. 
+        We characterize fine-tuning methods based on three key properties:
+        <div class="content has-text-justified">
+          <ol>
+            <li><b>on-policy sampling:</b> explicit sampling of new responses from the policy or purely learning from offline data</li>
+            <li><b>on-policy sample reuse:</b> for only those approaches that perform on-policy sampling, whether the approach makes more 
+              than one gradient update on a given prompt-response (𝑥, 𝑦) pair</li>
+            <li><b>negative gradient:</b> whether the approach explicitly minimizes a loss that attempts to “push-down” likelihood on 
+              certain responses by multiplying the gradient of their likelihood with a negative coefficient </li>
+          </ol>
+        </div>
+        <center>
+        <img src="./static/images/characterize.png"
+          alt="On-Policy Sampling."
+          width="75%"
+          class="on-policy-image"/>
+        </center>
+        <div class="content has-text-centered">
+          We characterize existing fine-tuning methods using these criterion.
+        </div>
+        <!-- Interpolating. -->
+        <h3 class="title is-4">On-Policy Sampling</h3>
+        <div class="content has-text-justified">
+          <p>
+            To study the impact of on-policy sampling, we vary the extent to which updates are made on data from the current policy. 
+            Below, we introduce Algorithm 1, which is a encapsulates how fine-tuning algorithms updates on preference data.
+          </p>
+        </div>
+        <center>
+        <img src="./static/images/finetuning_algo.png"
+          alt="Algorithm 1."
+          width="75%"
+          class="algo-one-image"/>
+        </center>
+        <div class="content has-text-centered">
+          We characterize existing fine-tuning methods using the following algorithmic formulation.
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            One way in which we can control the amount of on-policy sampling in Algorithm 1 is by by varying the total number of samples |𝒟| = 𝐵/𝐶 × 𝐶 = 𝐵 
+            used for a given training iteration but keeping minibatch size 𝑀 fixed, assuming the algorithm performs exactly one pass over all this sampled data. 
+          </p>
+        </div>
+
+        <center>
+        <img src="./static/images/alpaca_bs.png"
+          width="90%"
+          alt="On-Policy Sampling."
+          class="on-policy-image"/>
+        </center>
+        <div class="content has-text-centered">
+          Mini-Batch ablation for on-policy sampling on the AlpacaFarm dataset for the Reinforce (RLOO) and RWR algorithms.
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            We see that the performance of the algorithm increases as the number of samples increases, which suggests that on-policy sampling generally improves performance 
+            and efficiency, especially in cases when the peak of reward appears farther from the reference policy. In some cases, sample reuse can reduce the dependency on 
+            on-policy sampling of data, but it presents a tradeoff by reducing exploration of the response space.
+          </p>
+        </div>
         <!--/ Interpolating. -->
 
         <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
+        <h3 class="title is-4">Negative Gradients</h3>
         <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
+          To understand the role of negative gradient, we will compare contrastive algorithms with maximum likelihood methods in a fully offline setting, 
+          where no new on-policy samples are collected. We compare various algorithms in terms of performance and then analyze other metrics to 
+          understand the mechanisms behind this performance increase.
           </p>
         </div>
+
+        <center>
+        <img src="./static/images/neg_grad.png"
+          width="90%"
+          alt="On-Policy Sampling."
+          class="on-policy-image"/>
+        </center>
+        
         <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
+          <p>
+            Negative gradients in AlpacaFarm (left) and UltraFeedback (right). For these domains, we consider the increase in average gold reward 
+            compared to the SFT model for different offline approaches. Algorithms with a negative gradient such as DPO outperform approaches 
+            such as Pref-FT, which do not utilize any negative gradient term in their objective.
+          </p>
+        </div>
+
+        <h3 class="title is-4">Complementary Nature of On-Policy Sampling and Negative Gradients</h3>
+        <div class="content has-text-justified">
+          <p>
+            On-policy sampling and offline negative gradients present complementary benefits, in that the best offline loss function with 
+            negative gradients can be used to train on on-policy data, improving over on-policy RL or supervised learning. Conceptually, 
+            while sampling responses on-policy provides coverage of the response space, an effective negative gradient loss provides a 
+            stronger learning signal given a sampled dataset. This can also result in computational benefits.
+          </p>
+        </div>
+
+        <center>
+        <img src="./static/images/complimentarity.png"
+          width="90%"
+          alt="On-Policy Sampling."
+          class="on-policy-image"/>
+        </center>
+        
+        <div class="content has-text-centered">
+          <p>
+            Complimentary benefit of on-policy sampling and negative gradients on the synthetic LLM length experiments. 
+            Online DPO performs the best where optimal policy and reference policy lies far from each other 
+            (min length and skew length), and all algorithms perform similarly when these two policies are close (mode length).
+          </p>
         </div>
         <!--/ Re-rendering. -->
-
+        
+        <hr>
+        
+        <h2 class="title is-3">Theory and Conceptual Unification</h2>
+        <!-- TODO: Fill this section -->
       </div>
     </div>
     <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
+<hr>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{tajwar2024preference,
+  author    = {Tajwar and Singh, Sharma and Rafailov, Schneider and Xie, Ermon and Finn, Kumar},
+  title     = {Preference Fine-Tuning of LLMs Should Leverage Suboptimal, On-Policy Data},
+  year      = {2024},
 }</code></pre>
+<!-- journal   = {ICML}, -->
   </div>
 </section>
 
@@ -458,30 +401,17 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="./static/pdf/understanding_rlhf.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/Asap7772/understanding-rlhf" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
     <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
-        </div>
-      </div>
+      <p>
+        We thank the Nerfies Team for their <a href="https://github.com/nerfies/nerfies.github.io">website template</a>.
+      </p>
     </div>
   </div>
 </footer>
