@@ -68,7 +68,7 @@
             <span class="author-block"><sup>1</sup>Carnegie Mellon University</span>
             <span class="author-block"><sup>2</sup>Stanford University</span>
             <br/>
-            <span class="author-block"><sup>3</sup>Microsoft Research</span>
+            <span class="author-block"><sup>3</sup>University of Wisconsin, Madison</span>
             <span class="author-block"><sup>4</sup>Google DeepMind</span>
           </div>
 
@@ -130,7 +130,37 @@
       </div>
     </div>
   </div>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="#abstract">
+          Abstract
+        </a>
+        <a class="navbar-item" href="#setup">
+          Setup
+        </a>
+        <a class="navbar-item" href="#empirical">
+          Empirical Analysis
+        </a>
+        <a class="navbar-item" href="#theory">
+          Conceptual Unification
+        </a>
+        <a class="navbar-item" href="#BibTeX">
+          BibTeX
+        </a>
+    </div>
+  </nav>
+
 </section>
+
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -153,7 +183,7 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3" id="abstract">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Learning from preference labels plays a crucial role in fine-tuning large language models. There are several
@@ -176,50 +206,51 @@
       </div>
     </div>
     <!--/ Abstract. -->
-
+  <hr>
 <section class="section">
   <div class="container is-max-desktop">
-
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
 
-        <h2 class="title is-3">Domains Considered</h2>
+        <h2 class="title is-3" id="setup">Setup</h2>
         <div class="content has-text-justified">
           <p>
-            We considered three domains for our experiments: Didactic Bandit, Synthetic LLM, and Full-Scale LLM. We use these domains to study the impact of on-policy sampling
+            We considered three domains for our experiments: (1) Didactic Bandit, (2) Synthetic LLM, and (3) Full-Scale LLM. We use these domains to study the impact of on-policy sampling
             and negative gradients on different fine-tuning algorithms.
           </p>
         </div>
         
         <h3 class="title is-4">Didactic Bandit</h3>
         <div class="content has-text-justified">
-          <p>
-            The didactic bandit domain is a simple bandit problem where the reward function is known and the response space is small. We use this domain to validate
-            our theoretical findings and to understand the impact of on-policy sampling and negative gradients on different fine-tuning algorithms.
-          </p>
+          <!-- Create Bullet Point List to Summarize -->
+          <ul>
+            <li>Simple bandit problem with controllable ground-truth reward function and limited response space</li>
+            <li>Used to validate theoretical findings and understand the impact of on-policy sampling and negative gradients on different fine-tuning algorithms</li>
+          </ul>
         </div>
 
         <h3 class="title is-4">Synthetic LLM</h3>
         <div class="content has-text-justified">
-          <p>
-            The synthetic LLM domain is a domain where we can control the reward function and the response space. We use this domain to study the impact of coverage 
-            conditions and geometric relationships on different fine-tuning algorithms. 
-          </p>
-          <p>
-            In particular, our reward function of interest is the length of the response.
-            We consider three different types of reward functions: min length, mode length, and skew length. In the min length reward function, the optimal response is
-            the shortest response. In the mode length reward function, the optimal response is a response that is closest to the mode of the response space. In the skew
-            length reward function, completions in the dataset are truncated to shorter lengths, leading to a skewed distribution of response lengths.
-          </p>
+          <!-- Create Bullet Point List to Summarize -->
+          <ul>
+            <li>Used to study the impact of coverage conditions and geometric relationships on different fine-tuning algorithms</li>
+            <li>Constructed 3 different reward functions based on the length of the response:</li>
+            <ul>
+              <li><b>Min length:</b> preferred responses is shorter in length. </li>
+              <li><b>Mode length:</b> preferred responses are close to the mode length of responses in the preference dataset.</li>
+              <li><b>Skew length:</b> dataset completions are truncated to shorter lengths, leading to a skewed length distribution.</li>
+            </ul>
+          </ul>
         </div>
 
         <h3 class="title is-4">Full-Scale LLM</h3>
         <div class="content has-text-justified">
-          <p>
-            The full-scale LLM domain is a domain where we can study the impact of fine-tuning algorithms on realistic domains. We use the AlpacaFarm and UltraFeedback 
-            domains, which are domains commonly used by practitioners.
-          </p>
+          <!-- Create Bullet Point List to Summarize -->
+          <ul>
+            <li>Used to study the impact of fine-tuning algorithms on realistic domains</li>
+            <li>AlpacaFarm and UltraFeedback domains are commonly used domains by practitioners</li>
+          </ul>
         </div>
 
         <h3 class="title is-4">Coverage Conditions and Geometric Relationships</h3>
@@ -231,6 +262,19 @@
             orthogonal axes: [C1] the geometric alignment between the ground-truth reward function and the reference policy initialization and [C2] the 
             coverage of the preference data used to train the surrogate reward model relative to the reference policy.
           </p>
+
+          <center>
+          <img src="./static/images/coverage_teaser.jpg"
+            width="75%"
+            alt="On-Policy Sampling."
+            class="on-policy-image"/>
+          </center>
+          <div class="content has-text-centered">
+            <b>Left:</b> There is low geometric alignment between the ground-truth reward function and the reference policy initialization. 
+            In <b>[1]</b>, there is low coverage of the preference data of high reward completions but in <b>[2]</b> there is a higher coverage.
+            <b>Right:</b> There is high geometric alignment between the ground-truth reward function and the reference policy initialization.
+          </div>
+
           <p>
             Understanding the behavior of various approaches as a function of these factors will allow us to better understand the performance of 
             various approaches on downstream fine-tuning in terms of problem geometry [C1] and statistical learning considerations [C2].
@@ -253,7 +297,7 @@
 
         <hr>
 
-        <h2 class="title is-3">Empirical Analysis</h2>
+        <h2 class="title is-3" id="empirical">Empirical Analysis</h2>
 
         <!-- Interpolating. -->
         <h3 class="title is-4">Characterizing Fine-Tuning Methods</h3>
@@ -311,13 +355,15 @@
         <div class="content has-text-centered">
           Mini-Batch ablation for on-policy sampling on the AlpacaFarm dataset for the Reinforce (RLOO) and RWR algorithms.
         </div>
-
-        <div class="content has-text-justified">
-          <p>
-            We see that the performance of the algorithm increases as the number of samples increases, which suggests that on-policy sampling generally improves performance 
-            and efficiency, especially in cases when the peak of reward appears farther from the reference policy. In some cases, sample reuse can reduce the dependency on 
-            on-policy sampling of data, but it presents a tradeoff by reducing exploration of the response space.
-          </p>
+        
+        <div class="box" style="background-color:aliceblue">
+          <div class="content has-text-justified">
+            <p>
+              We see that the performance of the algorithm increases as the number of samples increases, which suggests that on-policy sampling generally improves performance 
+              and efficiency, especially in cases when the peak of reward appears farther from the reference policy. In some cases, sample reuse can reduce the dependency on 
+              on-policy sampling of data, but it presents a tradeoff by reducing exploration of the response space.
+            </p>
+          </div>
         </div>
         <!--/ Interpolating. -->
 
@@ -346,6 +392,36 @@
           </p>
         </div>
 
+        <center>
+        <img src="./static/images/neg_grad_rew.png"
+          width="90%"
+          alt="On-Policy Sampling."
+          class="on-policy-image"/>
+        </center>
+        <div class="content has-text-centered">
+          <p>
+            The reward margin between the preferred and dispreffered responses for contrastive algorithms such as DPO is higher than maximum likelihood algorithms such as Pref-FT.
+          </p>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            A negative gradient is useful when the peak in the reward function appears in less likely regions of the reference policy. 
+            It can increase the likelihood of the preferred response when the dispreffered response is semantically different and the 
+            model capacity is large enough. We can see this empirically with the increase in the reward margin between the preferred and
+            dispreffered responses for contrastive algorithms such as DPO compared to maximum likelihood algorithms such as Pref-FT.
+          </p>
+        </div>
+        
+        <div class="box" style="background-color:aliceblue">
+          <div class="content has-text-justified">
+            <p>
+              We see that algorithms that utilize negative gradients outperform those that do not, especially in cases where the reference policy is far from the optimal policy. 
+              This suggests that negative gradients can be a powerful tool to improve the performance of preference fine-tuning algorithms.
+            </p>
+          </div>
+        </div>
+
         <h3 class="title is-4">Complementary Nature of On-Policy Sampling and Negative Gradients</h3>
         <div class="content has-text-justified">
           <p>
@@ -371,11 +447,27 @@
           </p>
         </div>
         <!--/ Re-rendering. -->
+
+        <div class="box" style="background-color:aliceblue">
+          <div class="content has-text-justified">
+            <p>
+              We see that the best offline loss function with negative gradients can be used to train on on-policy data, improving over on-policy RL or supervised learning. 
+              Conceptually, while sampling responses on-policy provides coverage of the response space, an effective negative gradient loss provides a stronger learning signal 
+              given a sampled dataset. This can also result in computational benefits.
+            </p>
+          </div>
+        </div>
         
         <hr>
         
-        <h2 class="title is-3">Theory and Conceptual Unification</h2>
-        <!-- TODO: Fill this section -->
+        <h2 class="title is-3" id="theory">Theory and Conceptual Unification</h2>
+        <div class="content has-text-justified">
+          <p>
+            With empirical results showing the benefits of on-policy sampling and negative gradient for preference fine-tuning of LLMs, 
+            we tie these two approaches together under the notion of mode-seeking objectives in contrast to mode-covering objectives such as maximum likelihood. 
+            Below, we contrast the learning dynamics of these two types of objectives and provide a theoretical corroboration for the empirical findings.
+          </p>
+        </div>
       </div>
     </div>
     <!--/ Animation. -->
@@ -410,6 +502,7 @@
     </div>
     <div class="columns is-centered">
       <p>
+        Corresponding Authors: <a href="mailto:anikait@stanford.edu">Anikait Singh</a>, <a href="mailto:ftajwar@cs.cmu.edu">Fahim Tajwar</a>, <a href="mailto:aviralk@berkeley.edu">Aviral Kumar</a>.<br>
         We thank the Nerfies Team for their <a href="https://github.com/nerfies/nerfies.github.io">website template</a>.
       </p>
     </div>
