@@ -2,7 +2,7 @@
 
 This is the repository that contains source code for the [Understanding RLHF website](https://understanding-rlhf.github.io).
 
-If you find Nerfies useful for your work please cite:
+If you find our paper useful for your work please cite:
 ```
 @article{tajwar2024preference,
   author    = {Tajwar and Singh, Sharma and Rafailov, Schneider and Xie, Ermon and Finn, Kumar},
