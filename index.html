@@ -362,9 +362,10 @@
         <div class="box" style="background-color:aliceblue">
           <div class="content has-text-justified">
             <p>
-              We see that the performance of the algorithm increases as the number of samples increases, which suggests that on-policy sampling generally improves performance 
-              and efficiency, especially in cases when the peak of reward appears farther from the reference policy. In some cases, sample reuse can reduce the dependency on 
-              on-policy sampling of data, but it presents a tradeoff by reducing exploration of the response space.
+              To summarize, these results imply that on-policy sampling generally improves performance
+              and efficiency, especially in cases when the peak of reward appears farther from the reference
+              policy. In some cases, sample reuse can reduce the dependency on on-policy sampling of data,
+              but it presents a tradeoff by reducing exploration of the response space.
             </p>
           </div>
         </div>
@@ -410,9 +411,10 @@
         <div class="content has-text-justified">
           <p>
             A negative gradient is useful when the peak in the reward function appears in less likely regions of the reference policy. 
-            It can increase the likelihood of the preferred response when the dispreffered response is semantically different and the 
-            model capacity is large enough. We can see this empirically with the increase in the reward margin between the preferred and
-            dispreffered responses for contrastive algorithms such as DPO compared to maximum likelihood algorithms such as Pref-FT.
+            It can increase the likelihood of the preferred response when the dispreffered response is semantically different, 
+            when starting from an appropriate reference policy, given the model capacity. We can see this empirically with the increase in 
+            the reward margin between the preferred and dispreffered responses for contrastive algorithms such as DPO compared to 
+            maximum likelihood algorithms such as Pref-FT.
           </p>
         </div>
         
@@ -428,10 +430,11 @@
         <h3 class="title is-4">Complementary Nature of On-Policy Sampling and Negative Gradients</h3>
         <div class="content has-text-justified">
           <p>
-            On-policy sampling and offline negative gradients present complementary benefits, in that the best offline loss function with 
-            negative gradients can be used to train on on-policy data, improving over on-policy RL or supervised learning. Conceptually, 
-            while sampling responses on-policy provides coverage of the response space, an effective negative gradient loss provides a 
-            stronger learning signal given a sampled dataset. This can also result in computational benefits.
+            On-policy sampling and offline negative gradients present complementary benefits, in that
+            the best offline loss function with negative gradients can be used to train on on-policy data,
+            improving over on-policy RL or supervised learning. Conceptually, while sampling responses
+            on-policy provides coverage of the response space, an effective negative gradient loss provides
+            a stronger learning signal given a set of samples. It can also result in computational benefits.
           </p>
         </div>
 
