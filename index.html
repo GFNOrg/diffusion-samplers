@@ -38,19 +38,19 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="#abstract" style="color: #fff; border-bottom: 2px solid #fff;">
+      <a class="navbar-item" href="#abstract" style="color: #fff; border-bottom: 0px solid #fff;">
         Abstract
       </a>
-      <a class="navbar-item" href="#setup" style="color: #fff; border-bottom: 2px solid #fff;">
+      <a class="navbar-item" href="#setup" style="color: #fff; border-bottom: 0px solid #fff;">
         Setup
       </a>
-      <a class="navbar-item" href="#empirical" style="color: #fff; border-bottom: 2px solid #fff;">
+      <a class="navbar-item" href="#empirical" style="color: #fff; border-bottom: 0px solid #fff;">
         Empirical Analysis
       </a>
-      <a class="navbar-item" href="#theory" style="color: #fff; border-bottom: 2px solid #fff;">
+      <a class="navbar-item" href="#theory" style="color: #fff; border-bottom: 0px solid #fff;">
         Conceptual Unification
       </a>
-      <a class="navbar-item" href="#BibTeX" style="color: #fff; border-bottom: 2px solid #fff;">
+      <a class="navbar-item" href="#BibTeX" style="color: #fff; border-bottom: 0px solid #fff;">
         BibTeX
       </a>
   </div>
@@ -165,14 +165,14 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img src="./static/images/final_picture_teaser.jpg"
-           alt="Teaser image."
-           class="teaser-image"/>
+        alt="Teaser image."
+        class="teaser-image"/>
       <h2 class="subtitle has-text-centered">
         Which approaches are important for fine-tuning LLMs with preference data and why? Our main finding is that approaches 
-        that use on-policy sampling or attempt to push down the likelihood on certain responses (e.g., those with negative gradient 
+        that utilize on-policy sampling or attempt to push down the likelihood on certain responses (e.g., those with negative gradient 
         such as DPO) tend to outperform offline and maximum likelihood objectives. Combining on-policy sampling with methods that 
-        handle negative gradient well leads to complementary benefits. In this paper, we investigate the behavior of preference 
-        fine-tuning methods under various conditions and arrive at these conclusions. 
+        handle negative gradients well leads to complementary benefits. In this paper, we investigate the behavior of preference 
+        fine-tuning methods under various coverage conditions and arrive at these conclusions. 
       </h2>
     </div>
   </div>
@@ -217,7 +217,7 @@
         <h2 class="title is-3" id="setup">Setup</h2>
         <div class="content has-text-justified">
           <p>
-            We considered three problems for our experiments: (1) Didactic bandit problems that are easy to simulate, (2) Synthetic LLM 
+            We considered three problems for our experiments: (1) Didactic Bandit problems that are easy to simulate, (2) Synthetic LLM 
             fine-tuning problems, where ground-truth reward functions exist and are easy to track, and (3) Full-Scale LLM fine-tuning. 
             We use these problems to study the impact of on-policy sampling
             and negative gradients on performance.
@@ -361,7 +361,7 @@
         <div class="box" style="background-color:aliceblue">
           <div class="content has-text-justified">
             <p>
-              In summary, our results imply that on-policy sampling generally improves performance
+              <b>Takeaway: </b>In summary, our results imply that on-policy sampling generally improves performance
               and efficiency, especially in cases when the peak of reward appears farther from the reference
               policy. In some cases, sample reuse can reduce the dependency on on-policy sampling of data,
               but it presents a tradeoff by reducing exploration of the response space.
@@ -420,7 +420,7 @@
         <div class="box" style="background-color:aliceblue">
           <div class="content has-text-justified">
             <p>
-              We see that algorithms that utilize negative gradients outperform those that do not, especially in cases where the reference policy is far from the optimal policy. 
+              <b>Takeaway: </b>We see that algorithms that utilize negative gradients outperform those that do not, especially in cases where the reference policy is far from the optimal policy. 
               This suggests that negative gradients can be a powerful tool to improve the performance of preference fine-tuning algorithms.
             </p>
           </div>
@@ -456,7 +456,7 @@
         <div class="box" style="background-color:aliceblue">
           <div class="content has-text-justified">
             <p>
-              We see that the best offline loss function with negative gradients can be used to train on on-policy data, improving over on-policy RL or supervised learning. 
+              <b>Takeaway: </b>We see that the best offline loss function with negative gradients can be used to train on on-policy data, improving over on-policy RL or supervised learning. 
               Conceptually, while sampling responses on-policy provides coverage of the response space, an effective negative gradient loss provides a stronger learning signal 
               given a sampled dataset. This can also result in computational benefits.
             </p>
@@ -473,7 +473,7 @@
             such as maximum likelihood.
           </p>
           <p>
-            In the paper, we argue (in Lemmas 6.1 and 6.2) that (1) on-policy algorithms are mode-seeking as the optimize the regularized
+            In the paper, we argue (in Lemmas 6.1 and 6.2) that (1) on-policy algorithms are mode-seeking as they optimize the regularized
             reverse-KL objective and (2) if the negative responses are chosen appropriately, then the contrastive update accelerates the 
             rate of increase of probability mass on the preferred responses and exhibits mode-seeking behavior. For more details, 
             formal definitions, and the proof of these lemmas, please refer to the paper.
@@ -498,7 +498,7 @@
     <div class="box" style="background-color:aliceblue">
       <div class="content has-text-justified">
         <p>
-          We conceptually unify on-policy sampling and negative gradients under the notion of mode-seeking objectives, 
+          <b>Takeaway: </b>We conceptually unify on-policy sampling and negative gradients under the notion of mode-seeking objectives, 
           extended to categorical distributions. This corroborates our empirical findings.
         </p>
       </div>
