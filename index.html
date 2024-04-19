@@ -220,7 +220,7 @@
             We considered three problems for our experiments: (1) Didactic bandit problems that are easy to simulate, (2) Synthetic LLM 
             fine-tuning problems, where ground-truth reward functions exist and are easy to track, and (3) Full-Scale LLM fine-tuning. 
             We use these problems to study the impact of on-policy sampling
-            and negative gradients on different fine-tuning algorithms.
+            and negative gradients on performance.
           </p>
         </div>
         
@@ -228,8 +228,7 @@
         <div class="content has-text-justified">
           <!-- Create Bullet Point List to Summarize -->
           <ul>
-            <li>Simple bandit problem with controllable ground-truth reward function and limited response space</li>
-            <li>Used to validate theoretical findings and understand the impact of on-policy sampling and negative gradients on different fine-tuning algorithms</li>
+            <li>Simple bandit problem with controllable ground-truth reward function and combinatorial response space</li>
           </ul>
         </div>
 
@@ -280,7 +279,7 @@
 
           <p>
             Understanding the behavior of various approaches as a function of these factors will allow us to better understand the performance of 
-            various approaches on downstream fine-tuning in terms of problem geometry [C1] and statistical learning considerations [C2].
+            various approaches on downstream fine-tuning in terms of problem geometry [C1] and statistical learning considerations [C2]. For example, in the synthetic LLM setting we consider the following cases
           </p>
         </div>
         
@@ -356,13 +355,13 @@
           class="on-policy-image"/>
         </center>
         <div class="content has-text-centered">
-          Mini-Batch ablation for on-policy sampling on the AlpacaFarm dataset for the Reinforce (RLOO) and RWR algorithms.
+          Varying batch sizes for on-policy sampling on the AlpacaFarm dataset for the Reinforce (RLOO) and RWR algorithms.
         </div>
         
         <div class="box" style="background-color:aliceblue">
           <div class="content has-text-justified">
             <p>
-              To summarize, these results imply that on-policy sampling generally improves performance
+              In summary, our results imply that on-policy sampling generally improves performance
               and efficiency, especially in cases when the peak of reward appears farther from the reference
               policy. In some cases, sample reuse can reduce the dependency on on-policy sampling of data,
               but it presents a tradeoff by reducing exploration of the response space.
@@ -404,16 +403,16 @@
         </center>
         <div class="content has-text-centered">
           <p>
-            The reward margin between the preferred and dispreffered responses for contrastive algorithms such as DPO is higher than maximum likelihood algorithms such as Pref-FT.
+            The reward margin between the preferred and dispreferred responses for contrastive algorithms such as DPO is higher than maximum likelihood algorithms such as Pref-FT.
           </p>
         </div>
 
         <div class="content has-text-justified">
           <p>
             A negative gradient is useful when the peak in the reward function appears in less likely regions of the reference policy. 
-            It can increase the likelihood of the preferred response when the dispreffered response is semantically different, 
+            It can increase the likelihood of the preferred response when the dispreferred response is semantically different, 
             when starting from an appropriate reference policy, given the model capacity. We can see this empirically with the increase in 
-            the reward margin between the preferred and dispreffered responses for contrastive algorithms such as DPO compared to 
+            the reward margin between the preferred and dispreferred responses for contrastive algorithms such as DPO compared to 
             maximum likelihood algorithms such as Pref-FT.
           </p>
         </div>
@@ -476,7 +475,8 @@
           <p>
             In the paper, we argue (in Lemmas 6.1 and 6.2) that (1) on-policy algorithms are mode-seeking as the optimize the regularized
             reverse-KL objective and (2) if the negative responses are chosen appropriately, then the contrastive update accelerates the 
-            rate of increase of probability mass on the preferred responses. For more details, formal definitions, and the proof of these lemmas, please refer to the paper.
+            rate of increase of probability mass on the preferred responses and exhibits mode-seeking behavior. For more details, 
+            formal definitions, and the proof of these lemmas, please refer to the paper.
         </div>
         <div class="content has-text-justified">
           <p>
