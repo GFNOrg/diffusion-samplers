@@ -168,9 +168,11 @@
            alt="Teaser image."
            class="teaser-image"/>
       <h2 class="subtitle has-text-centered">
-        We study what approaches are important for fine-tuning with preference data and why. Our main finding is that approaches 
-        that use on-policy sampling or attempt to minimize the likelihood on certain responses (negative gradient) outperform 
-        offline and maximum likelihood objectives.
+        Which approaches are important for fine-tuning LLMs with preference data and why? Our main finding is that approaches 
+        that use on-policy sampling or attempt to push down the likelihood on certain responses (e.g., those with negative gradient 
+        such as DPO) tend to outperform offline and maximum likelihood objectives. Combining on-policy sampling with methods that 
+        handle negative gradient well leads to complementary benefits. In this paper, we investigate the behavior of preference 
+        fine-tuning methods under various conditions and arrive at these conclusions. 
       </h2>
     </div>
   </div>
@@ -215,7 +217,9 @@
         <h2 class="title is-3" id="setup">Setup</h2>
         <div class="content has-text-justified">
           <p>
-            We considered three domains for our experiments: (1) Didactic Bandit, (2) Synthetic LLM, and (3) Full-Scale LLM. We use these domains to study the impact of on-policy sampling
+            We considered three problems for our experiments: (1) Didactic bandit problems that are easy to simulate, (2) Synthetic LLM 
+            fine-tuning problems, where ground-truth reward functions exist and are easy to track, and (3) Full-Scale LLM fine-tuning. 
+            We use these problems to study the impact of on-policy sampling
             and negative gradients on different fine-tuning algorithms.
           </p>
         </div>
