@@ -403,16 +403,16 @@
         </center>
         <div class="content has-text-centered">
           <p>
-            The reward margin between the preferred and dispreffered responses for contrastive algorithms such as DPO is higher than maximum likelihood algorithms such as Pref-FT.
+            The reward margin between the preferred and dispreferred responses for contrastive algorithms such as DPO is higher than maximum likelihood algorithms such as Pref-FT.
           </p>
         </div>
 
         <div class="content has-text-justified">
           <p>
             A negative gradient is useful when the peak in the reward function appears in less likely regions of the reference policy. 
-            It can increase the likelihood of the preferred response when the dispreffered response is semantically different, 
+            It can increase the likelihood of the preferred response when the dispreferred response is semantically different, 
             when starting from an appropriate reference policy, given the model capacity. We can see this empirically with the increase in 
-            the reward margin between the preferred and dispreffered responses for contrastive algorithms such as DPO compared to 
+            the reward margin between the preferred and dispreferred responses for contrastive algorithms such as DPO compared to 
             maximum likelihood algorithms such as Pref-FT.
           </p>
         </div>
@@ -475,7 +475,7 @@
           <p>
             In the paper, we argue (in Lemmas 6.1 and 6.2) that (1) on-policy algorithms are mode-seeking as the optimize the regularized
             reverse-KL objective and (2) if the negative responses are chosen appropriately, then the contrastive update accelerates the 
-            rate of increase of probability mass on the preferred responses. Thus, contrastive objectives such as DPO are mode-seeking. For more details, 
+            rate of increase of probability mass on the preferred responses and exhibits mode-seeking behavior. Thus, contrastive objectives such as DPO are mode-seeking. For more details, 
             formal definitions, and the proof of these lemmas, please refer to the paper.
         </div>
         <div class="content has-text-justified">
