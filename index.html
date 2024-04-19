@@ -464,26 +464,14 @@
         <div class="content has-text-justified">
           <p>
             With empirical results showing the benefits of on-policy sampling and negative gradient for preference fine-tuning of LLMs, 
-            we tie these two approaches together under the notion of mode-seeking objectives in contrast to mode-covering objectives such as maximum likelihood. 
+            we tie these two approaches together under the notion of mode-seeking objectives in contrast to mode-covering objectives 
+            such as maximum likelihood.
           </p>
-        </div>
-
-        <center>
-        <img src="./static/images/llema61.png"
-          width="90%"
-          alt="On-Policy Sampling."
-          class="mode-seeking-image"/>
-        </center>
-        <center>
-        <img src="./static/images/llema62.png"
-          width="90%"
-          alt="On-Policy Sampling."
-          class="mode-seeking-image"/>
-        </center>
-        
-        <div class="content has-text-centered">
-          Lemma 6.1 indicates that on-policy algorithms are mode-seeking as the optimize the regularize reverse-KL objective. Lemma 6.2 indicates that if the negative responses are chosen appropriately, then the contrastive update accelerates the rate of increase of probability mass
-          on the preferred responses. Thus, objectives such as DPO are mode-seeking.
+          <p>
+            In the paper, we argue (in Lemmas 6.1 and 6.2) that (1) on-policy algorithms are mode-seeking as the optimize the regularized
+            reverse-KL objective and (2) if the negative responses are chosen appropriately, then the contrastive update accelerates the 
+            rate of increase of probability mass on the preferred responses. Thus, contrastive objectives such as DPO are mode-seeking. For more details, 
+            formal definitions, and the proof of these lemmas, please refer to the paper.
         </div>
         <div class="content has-text-justified">
           <p>
