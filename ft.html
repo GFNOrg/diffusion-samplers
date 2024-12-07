@@ -260,12 +260,14 @@
           Here, \( Z_{\phi} \) is a learnable normalization constant. By aligning the trajectory probabilities in this manner, RTB facilitates unbiased sampling from the desired posterior distribution \( p^{\text{post}}(\mathbf{x}) \propto p_\theta(\mathbf{x}) r(\mathbf{x}) \), effectively incorporating the constraints imposed by \( r(\mathbf{x}) \) into the diffusion model's generative process.
         </p>
 
-
         <hr>
 
         <h2 class="title is-3" id="results">Empirical Results</h2>
 
         <h3 class="title is-4" id="results">Unconditional Image</h3>
+        <p>
+          In this section, we fine-tune unconditional diffusion priors for class-conditional generation on MNIST and CIFAR-10 datasets. Starting with pretrained unconditional models \( p_\theta(x) \), we apply the RTB objective to adapt the priors to sample from posteriors conditioned on class labels \( c \). This is achieved by incorporating class-specific constraints \( r(x) = p(c | x) \) during fine-tuning. In the figure, we observe some of our results. RTB effectively balances reward maximization and sample diversity, finetuning both for single class conditions, or multimodal distributions (e.g. even numbers).
+        </p>
         <div class="content has-text-justified">
           <center>
             <img src="./static/images/cls_finetuning_samples.png" alt="Image" style="width: 100%;"/>
