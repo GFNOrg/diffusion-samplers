@@ -247,15 +247,19 @@
         <center>
           <img src="./static/images/example.png" alt="GMM Example" style="width: 100%;"/>
         </center>
+        <p>
+          The <b>Relative Trajectory Balance (RTB)</b> objective ensures that the ratio of the forward trajectory probabilities under the posterior model \( p_\phi^{\text{post}} \) to the prior model \( p_\theta \) is proportional to the constraint function \( r(\mathbf{x}) \). This is achieved by minimizing the loss:
+        </p>
         <div class="box" style="background-color:aliceblue">
           <div class="content has-text-justified">
-            <b>Relative trajectory balance loss:</b>
-            <p>
               $$L(x,\tau; \phi) = \left(\log\frac{Z_\phi\prod_{i=1}^np_{F,\phi}^{{\rm post}}(s_k\mid s_{k-1})}{r(x)\prod_{i=1}^{n}p_F(s_{k}|s_{k-1})}\right)^2$$
               <!-- <b></b>  -->
-            </p>
           </div>
         </div>
+        <p>
+          Here, \( Z_{\phi} \) is a learnable normalization constant. By aligning the trajectory probabilities in this manner, RTB facilitates unbiased sampling from the desired posterior distribution \( p^{\text{post}}(\mathbf{x}) \propto p_\theta(\mathbf{x}) r(\mathbf{x}) \), effectively incorporating the constraints imposed by \( r(\mathbf{x}) \) into the diffusion model's generative process.
+        </p>
+
 
         <hr>
 
