@@ -51,7 +51,7 @@
         Setup
       </a>
       <a class="navbar-item" href="#method" style="color: #fff; border-bottom: 0px solid #fff;">
-        Method 
+        Method
       </a>
       <a class="navbar-item" href="#results" style="color: #fff; border-bottom: 0px solid #fff;">
         Empirical Results
@@ -184,7 +184,7 @@
         <!-- alt="Teaser image." -->
         <!-- class="teaser-image"/> -->
       <h2 class="subtitle has-text-centered">
-        Put a new figure here 
+        Put a new figure here
       </h2>
     </div>
   </div>
@@ -200,13 +200,13 @@
         <div class="content has-text-justified">
           <p>
             Diffusion models have emerged as effective distribution estimators in vision, language, and reinforcement learning, but their use as priors
-            in downstream tasks poses an intractable posterior inference problem. This paper studies amortized sampling of the posterior over data, $\mathbf{x}\sim p^\text{post}(\mathbf{x})\propto p(\mathbf{x})r(\mathbf{x})$, 
-            in a model that consists of a diffusion generative model prior p($\mathbf{x}$) and a black-box constraint or likelihood function $r(\mathbf{x})$. We state and prove the asymptotic 
-            correctness of a data-free learning objective, relative trajectory balance, for training a diffusion model that samples from this posterior, a problem that 
-            existing methods solve only approximately or in restricted cases. Relative trajectory balance arises from the generative flow network perspective on diffusion 
-            models, which allows the use of deep reinforcement learning techniques to improve mode coverage. Experiments illustrate the broad potential of unbiased inference 
-            of arbitrary posteriors under diffusion priors: in vision (classifier guidance), language (infilling under a discrete diffusion LLM), and multimodal data 
-            (text-to-image generation). Beyond generative modeling, we apply relative trajectory balance to the problem of continuous control with a score-based behavior 
+            in downstream tasks poses an intractable posterior inference problem. This paper studies amortized sampling of the posterior over data, $\mathbf{x}\sim p^\text{post}(\mathbf{x})\propto p(\mathbf{x})r(\mathbf{x})$,
+            in a model that consists of a diffusion generative model prior p($\mathbf{x}$) and a black-box constraint or likelihood function $r(\mathbf{x})$. We state and prove the asymptotic
+            correctness of a data-free learning objective, relative trajectory balance, for training a diffusion model that samples from this posterior, a problem that
+            existing methods solve only approximately or in restricted cases. Relative trajectory balance arises from the generative flow network perspective on diffusion
+            models, which allows the use of deep reinforcement learning techniques to improve mode coverage. Experiments illustrate the broad potential of unbiased inference
+            of arbitrary posteriors under diffusion priors: in vision (classifier guidance), language (infilling under a discrete diffusion LLM), and multimodal data
+            (text-to-image generation). Beyond generative modeling, we apply relative trajectory balance to the problem of continuous control with a score-based behavior
             prior, achieving state-of-the-art results on benchmarks in offline reinforcement learning.
           </p>
         </div>
@@ -221,16 +221,16 @@
       <div class="column is-full-width">
 
         <h2 class="title is-3" id="intractable">Intractable inference in diffusion models</h2>
-        
+
         <h3 class="title is-4" id="setup">Setup</h3>
-        
-        
+
+
         <div class="content has-text-justified">
-          <p>
-            We are interested in sampling from a product distribution $p(\mathbf{x})r(\mathbf{x})$
+          <p> Given a diffusion model prior \( p(\mathbf{x}) \) and a black-box likelihood function \( r(\mathbf{x}) \), our goal is to sample from the posterior \( p^{\text{post}}(\mathbf{x}) \propto p(\mathbf{x}) r(\mathbf{x}) \). Conventional approaches often rely on heuristic guidance, leading to bias or restricted applicability. In contrast, we derive a principled, unbiased objective for posterior sampling, rooted in the Generative Flow Network (GFlowNet) perspective, which ensures improved mode coverage and asymptotic correctness without requiring data or approximations.
+
           </p>
         </div>
-        
+
 
         <h3 class="title is-4">Coverage Conditions and Geometric Relationships</h3>
 
@@ -239,7 +239,7 @@
             Some content here
           </p>
         </div>
-        
+
         <hr>
 
         <h2 class="title is-3" id="method">Relative trajectory balance</h2>
@@ -258,16 +258,16 @@
         </div>
 
         <hr>
-        
+
         <h2 class="title is-3" id="results">Empirical Results</h2>
-        
+
         <h3 class="title is-4" id="results">Unconditional Image</h3>
         <div class="content has-text-justified">
           <center>
             <img src="./static/images/cls_finetuning_samples.png" alt="Image" style="width: 100%;"/>
           </center>
         </div>
-        
+
         <h3 class="title is-4" id="results">Text-to-image</h3>
         <div class="content has-text-justified">
           <p>
@@ -280,7 +280,7 @@
             <img src="./static/images/text2image_metrics.png" alt="Text-to-image metrics" style="width: 100%;"/>
           </center>
         </div>
-        
+
         <h3 class="title is-4" id="results">Diffusion language models</h3>
         <div class="content has-text-justified">
           <center>
@@ -288,8 +288,8 @@
           </center>
 
         </div>
-        
-        
+
+
         <h3 class="title is-4" id="results">Offline RL</h3>
         <div class="content has-text-justified"></div>
         <center>
@@ -298,7 +298,7 @@
         </div>
       </div>
     </div>
-    
+
     <!--/ Animation. -->
   </div>
 </section>
@@ -308,7 +308,7 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code> 
+    <pre><code>
       @inproceedings{
         venkatraman2024amortizing,
         title={Amortizing intractable inference in diffusion models for vision, language, and control},
