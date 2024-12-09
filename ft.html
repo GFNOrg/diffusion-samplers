@@ -258,7 +258,7 @@
         </div>
         <div class="content has-text-justified">
         <p>
-          Here, \( Z_{\phi} \) is a learnable normalization constant. By aligning the trajectory probabilities in this manner, RTB facilitates unbiased sampling from the desired posterior distribution \( p^{\text{post}}(\mathbf{x}) \propto p_\theta(\mathbf{x}) r(\mathbf{x}) \), effectively incorporating the constraints imposed by \( r(\mathbf{x}) \) into the diffusion model's generative process.
+          Here, \( Z_{\phi} \) is a learnable normalization constant. Satisfying the RTB constraint (minimizing loss to 0) for all diffusion trajectories facilitates unbiased sampling from the desired posterior distribution \( p^{\text{post}}(\mathbf{x}) \propto p_\theta(\mathbf{x}) r(\mathbf{x}) \).
         </p>
         </div>
 
@@ -313,7 +313,7 @@
 
         <h3 class="title is-4" id="results">Offline RL</h3>
         <p>
-          An important problem in offline RL is KL regularized policy extraction using the behavior policy as prior, and the trained Q function obtained using an off-the-shelf Q-learning algorithm. Diffusion policies are expressive and can model highly multimodal behavior policies. Given this diffusion prior \(mu(a|s)\) and a Q function trained with IQL \(Q(s,a)\), we use RTB to obtain the KL regularized optimal policy of the form \(\pi^*(a|s) \propto \mu(a|s)e^{Q(s,a)}\). We match state of the art results in the D4RL benchmark.
+          An important problem in offline RL is KL regularized policy extraction using the behavior policy as prior, and the trained Q function obtained using an off-the-shelf Q-learning algorithm. Diffusion policies are expressive and can model highly multimodal behavior policies. Given this diffusion prior \(\mu(a|s)\) and a Q function trained with IQL \(Q(s,a)\), we use RTB to obtain the KL regularized optimal policy of the form \(\pi^*(a|s) \propto \mu(a|s)e^{Q(s,a)}\). We match state of the art results in the D4RL benchmark.
         </p>
         <div class="content has-text-justified"></div>
         <center>
