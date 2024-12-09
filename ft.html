@@ -232,13 +232,13 @@
         </div>
 
 
-        <h3 class="title is-4">Coverage Conditions and Geometric Relationships</h3>
+        <!--<h3 class="title is-4">Coverage Conditions and Geometric Relationships</h3>
 
         <div class="content has-text-justified">
           <p>
             Some content here
           </p>
-        </div>
+        </div>-->
 
         <hr>
 
@@ -252,13 +252,22 @@
         </p>
         <div class="box" style="background-color:aliceblue">
           <div class="content has-text-justified">
-              $$L(x,\tau; \phi) = \left(\log\frac{Z_\phi\prod_{i=1}^np_{F,\phi}^{{\rm post}}(s_k\mid s_{k-1})}{r(x)\prod_{i=1}^{n}p_F(s_{k}|s_{k-1})}\right)^2$$
+              $$L(x,\tau; \phi) = \left(\log\frac{Z_\phi\prod_{i=1}^np_{F,\phi}^{{\rm post}}(s_k\mid s_{k-1})}{r(x)\prod_{i=1}^{n}p_{F,\theta}(s_{k}\mid s_{k-1})}\right)^2$$
               <!-- <b></b>  -->
           </div>
         </div>
+        <div class="content has-text-justified">
         <p>
           Here, \( Z_{\phi} \) is a learnable normalization constant. By aligning the trajectory probabilities in this manner, RTB facilitates unbiased sampling from the desired posterior distribution \( p^{\text{post}}(\mathbf{x}) \propto p_\theta(\mathbf{x}) r(\mathbf{x}) \), effectively incorporating the constraints imposed by \( r(\mathbf{x}) \) into the diffusion model's generative process.
         </p>
+        </div>
+
+        <div class="content has-text-justified">
+        <h3 class="title is-4" id="setup">Off-Policy Exploration</h3>
+        <p>
+          We are free to choose off-policy diffusion trajectories to optimize the RTB objective, which facilitates improved exploration and mode coverage. In particular, useful strategies include the use of replay buffers and local search.
+        </p>
+        </div>
 
         <hr>
 
@@ -266,7 +275,7 @@
 
         <h3 class="title is-4" id="results">Unconditional Image</h3>
         <p>
-          In this section, we fine-tune unconditional diffusion priors for class-conditional generation on MNIST and CIFAR-10 datasets. Starting with pretrained unconditional models \( p_\theta(x) \), we apply the RTB objective to adapt the priors to sample from posteriors conditioned on class labels \( c \). This is achieved by incorporating class-specific constraints \( r(x) = p(c | x) \) during fine-tuning. In the figure, we observe some of our results. RTB effectively balances reward maximization and sample diversity, finetuning both for single class conditions, or multimodal distributions (e.g. even numbers).
+          We fine-tune unconditional diffusion priors for class-conditional generation on MNIST and CIFAR-10 datasets. Starting with pretrained unconditional models \( p_\theta(x) \), we apply the RTB objective to adapt the priors to sample from posteriors conditioned on class labels \( c \). This is achieved by incorporating class-specific constraints \( r(x) = p(c | x) \) during fine-tuning. In the figure, we observe some of our results. RTB effectively balances reward maximization and sample diversity, finetuning both for single class conditions, or multimodal distributions (e.g. even numbers).
         </p>
         <div class="content has-text-justified">
           <center>
@@ -275,6 +284,9 @@
         </div>
 
         <h3 class="title is-4" id="results">Text-to-image</h3>
+        <p>
+          We apply RTB to the problem of KL regularized finetuning of text-to-image diffusion priors (stable-diffusion-1.5) with a reward function trained on human preferences (ImageReward). RTB optimized policies achieve high reward while maintaining diversity in the generated images. In the images shown below for different text prompts - the first row is the diffusion prior, second row consists of biased posteriors finetuned with KL regularized RL (DPOK), and third row consists of posteriors finetuned with RTB.
+        </p>
         <div class="content has-text-justified">
           <p>
 
@@ -288,6 +300,9 @@
         </div>
 
         <h3 class="title is-4" id="results">Diffusion language models</h3>
+        <p>
+          RTB is generally applicable to hierarchical generative models, including discrete diffusion. We apply RTB to infilling stories with a discrete diffusion model prior, outperforming finetuned autoregressive models for this task.
+        </p>
         <div class="content has-text-justified">
           <center>
             <img src="./static/images/dlm_metrics.png" alt="LM results" style="width: 100%;"/>
@@ -297,6 +312,9 @@
 
 
         <h3 class="title is-4" id="results">Offline RL</h3>
+        <p>
+          An important problem in offline RL is KL regularized policy extraction using the behavior policy as prior, and the trained Q function obtained using an off-the-shelf Q-learning algorithm. Diffusion policies are expressive and can model highly multimodal behavior policies. Given this diffusion prior \(mu(a|s)\) and a Q function trained with IQL \(Q(s,a)\), we use RTB to obtain the KL regularized optimal policy of the form \(\pi^*(a|s) \propto \mu(a|s)e^{Q(s,a)}\). We match state of the art results in the D4RL benchmark.
+        </p>
         <div class="content has-text-justified"></div>
         <center>
           <img src="./static/images/offline_rl_metrics.png" alt="Offline RL results" style="width: 100%;"/>
