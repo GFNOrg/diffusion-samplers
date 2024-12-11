@@ -226,7 +226,7 @@
 
 
         <div class="content has-text-justified">
-          <p> Given a diffusion model prior \( p(\mathbf{x}) \) and a black-box likelihood function \( r(\mathbf{x}) \), our goal is to sample from the posterior \( p^{\text{post}}(\mathbf{x}) \propto p(\mathbf{x}) r(\mathbf{x}) \). Conventional approaches often rely on heuristic guidance, leading to bias or restricted applicability. In contrast, we derive a principled, unbiased objective for posterior sampling, rooted in the Generative Flow Network (GFlowNet) perspective, which ensures improved mode coverage and asymptotic correctness without requiring data or approximations.
+          <p> Given a diffusion model prior $p(\mathbf{x})$ and a black-box likelihood function $r(\mathbf{x})$, our goal is to sample from the posterior $p^{\text{post}}(\mathbf{x}) \propto p(\mathbf{x}) r(\mathbf{x})$. Conventional approaches often rely on heuristic guidance, leading to bias or restricted applicability. In contrast, we derive a principled, unbiased objective for posterior sampling, rooted in the Generative Flow Network (GFlowNet) perspective, which ensures improved mode coverage and asymptotic correctness without requiring data or approximations.
 
           </p>
         </div>
@@ -248,7 +248,7 @@
           <img src="./static/images/example.png" alt="GMM Example" style="width: 100%;"/>
         </center>
         <p>
-          The <b>Relative Trajectory Balance (RTB)</b> objective ensures that the ratio of the forward trajectory probabilities under the posterior model \( p_\phi^{\text{post}} \) to the prior model \( p_\theta \) is proportional to the constraint function \( r(\mathbf{x}) \). This is achieved by minimizing the loss:
+          The <b>Relative Trajectory Balance (RTB)</b> objective ensures that the ratio of the forward trajectory probabilities under the posterior model $p_\phi^{\text{post}}$ to the prior model $p_\theta$ is proportional to the constraint function $r(\mathbf{x})$. This is achieved by minimizing the loss:
         </p>
         <div class="box" style="background-color:aliceblue">
           <div class="content has-text-justified">
@@ -258,7 +258,7 @@
         </div>
         <div class="content has-text-justified">
         <p>
-          Here, \( Z_{\phi} \) is a learnable normalization constant. Satisfying the RTB constraint (minimizing loss to 0) for all diffusion trajectories facilitates unbiased sampling from the desired posterior distribution \( p^{\text{post}}(\mathbf{x}) \propto p_\theta(\mathbf{x}) r(\mathbf{x}) \).
+          Here, $Z_{\phi}$ is a learnable normalization constant. Satisfying the RTB constraint (minimizing loss to 0) for all diffusion trajectories facilitates unbiased sampling from the desired posterior distribution $p^{\text{post}}(\mathbf{x}) \propto p_\theta(\mathbf{x}) r(\mathbf{x})$.
         </p>
         </div>
 
@@ -275,7 +275,7 @@
 
         <h3 class="title is-4" id="results">Unconditional Image</h3>
         <p>
-          We fine-tune unconditional diffusion priors for class-conditional generation on MNIST and CIFAR-10 datasets. Starting with pretrained unconditional models \( p_\theta(x) \), we apply the RTB objective to adapt the priors to sample from posteriors conditioned on class labels \( c \). This is achieved by incorporating class-specific constraints \( r(x) = p(c | x) \) during fine-tuning. In the figure, we observe some of our results. RTB effectively balances reward maximization and sample diversity, finetuning both for single class conditions, or multimodal distributions (e.g. even numbers).
+          We fine-tune unconditional diffusion priors for class-conditional generation on MNIST and CIFAR-10 datasets. Starting with pretrained unconditional models $p_\theta(x)$, we apply the RTB objective to adapt the priors to sample from posteriors conditioned on class labels $c$. This is achieved by incorporating class-specific constraints $r(x) = p(c | x)$ during fine-tuning. In the figure, we observe some of our results. RTB effectively balances reward maximization and sample diversity, finetuning both for single class conditions, or multimodal distributions (e.g. even numbers).
         </p>
         <div class="content has-text-justified">
           <center>
